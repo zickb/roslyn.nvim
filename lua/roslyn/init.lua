@@ -303,7 +303,7 @@ function M.setup(config)
         callback = function(opt)
             vim.notify("check for valid buffer", vim.log.levels.INFO)
             if not valid_buffer(opt.buf) then
-                assert(nil, vim.bo[buf].buftype .. ' | ' .. vim.api.nvim_buf_get_name(opt.buf))
+                assert(nil, vim.bo[opt.buf].buftype .. ' | ' .. vim.api.nvim_buf_get_name(opt.buf))
                 return
             end
 
