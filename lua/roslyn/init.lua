@@ -258,7 +258,7 @@ end
 ---@param roslyn_config InternalRoslynNvimConfig
 local function start_with_projects(cmd, bufnr, csproj, roslyn_config)
     lsp_start(cmd, bufnr, csproj.directory, roslyn_config, function(client)
-        vim.notify("Initializing Roslyn client for projects", vim.log.levels.INFO)
+        vim.notify("2: Initializing Roslyn client for projects", vim.log.levels.INFO)
         client.notify("project/open", {
             projects = vim.tbl_map(function(file)
                 return vim.uri_from_fname(file)
