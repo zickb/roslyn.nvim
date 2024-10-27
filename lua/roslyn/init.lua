@@ -301,6 +301,7 @@ function M.setup(config)
         group = vim.api.nvim_create_augroup("Roslyn", { clear = true }),
         pattern = { "*.cs", "roslyn-source-generated://*" },
         callback = function(opt)
+            vim.notify("check for valid buffer", vim.log.levels.INFO)
             if not valid_buffer(opt.buf) then
                 return
             end
