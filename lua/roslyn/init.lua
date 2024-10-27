@@ -299,7 +299,7 @@ function M.setup(config)
 
     vim.api.nvim_create_autocmd({ "BufEnter" }, {
         group = vim.api.nvim_create_augroup("Roslyn", { clear = true }),
-        pattern = "*.cs",
+        pattern = { "*.cs", "roslyn-source-generated://*" },
         callback = function(opt)
             if not valid_buffer(opt.buf) then
                 return
