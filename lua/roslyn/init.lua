@@ -290,7 +290,7 @@ function M.setup(config)
     ---@param target string
     local function on_init_sln(target)
         return function(client)
-            vim.notify("Initializing Roslyn client for " .. target, vim.log.levels.INFO)
+            vim.notify("2: Initializing Roslyn client for " .. target, vim.log.levels.INFO)
             client.notify("solution/open", {
                 solution = vim.uri_from_fname(target),
             })
