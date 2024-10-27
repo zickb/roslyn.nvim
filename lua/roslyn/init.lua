@@ -303,7 +303,7 @@ function M.setup(config)
         callback = function(opt)
             vim.notify("check for valid buffer", vim.log.levels.INFO)
             if not valid_buffer(opt.buf) then
-                assert(nil, vim.bo[opt.buf].buftype .. ' | ' .. vim.api.nvim_buf_get_name(opt.buf) .. ' | ' .. toString(vim.bo[buf].buftype ~= "nofile") .. ' | ' .. toString((bufname:match("^/") or bufname:match("^[a-zA-Z]:") or bufname:match("^zipfile://") or bufname:match("^tarfile:") or bufname:match("^roslyn-source-generated://"))))
+                assert(nil, vim.bo[opt.buf].buftype .. ' | ' .. vim.api.nvim_buf_get_name(opt.buf) .. ' | ' .. toString(vim.bo[opt.buf].buftype ~= "nofile") .. ' | ' .. toString((vim.api.nvim_buf_get_name(opt.buf):match("^/") or vim.api.nvim_buf_get_name(opt.buf):match("^[a-zA-Z]:") or vim.api.nvim_buf_get_name(opt.buf):match("^zipfile://") or vim.api.nvim_buf_get_name(opt.buf):match("^tarfile:") or vim.api.nvim_buf_get_name(opt.buf):match("^roslyn-source-generated://"))))
                 return
             end
 
