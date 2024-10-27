@@ -12,6 +12,7 @@ local function valid_buffer(buf)
             or bufname:match("^[a-zA-Z]:")
             or bufname:match("^zipfile://")
             or bufname:match("^tarfile:")
+            or bufname:match("^roslyn-source-generated://")
         )
 end
 
