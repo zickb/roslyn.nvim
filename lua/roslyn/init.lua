@@ -302,8 +302,8 @@ function M.setup(config)
         pattern = { "*.cs", "roslyn-source-generated://*" },
         callback = function(opt)
             vim.notify("check for valid buffer", vim.log.levels.INFO)
-            if not valid_buffer(vim.bo[buf].buftype .. ' | ' .. opt.buf) then
-                assert(nil, vim.api.nvim_buf_get_name(opt.buf))
+            if not valid_buffer(opt.buf) then
+                assert(nil, vim.bo[buf].buftype .. ' | ' .. vim.api.nvim_buf_get_name(opt.buf))
                 return
             end
 
